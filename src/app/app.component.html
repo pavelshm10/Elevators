@@ -1,5 +1,19 @@
-<div class="building">
-  <!-- <div  > -->
-      <img *ngFor="let elevetor of elevators" class="elevator" src="/assets/elevator.jpg">
-  <!-- </div> -->
-</div>
+<table mat-table [dataSource]="dataSource">
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+    <ng-container [cdkColumnDef]="'floors'">
+      <mat-cell *cdkCellDef="let row=index">{{floors[row]}}</mat-cell>
+    </ng-container>
+
+    <ng-container *ngFor="let column of columns; let colIndex = index" [cdkColumnDef]="column.columnDef">
+      <mat-cell *cdkCellDef="let row">{{ row[colIndex] }}</mat-cell>
+    </ng-container>
+
+    <ng-container [cdkColumnDef]="'buttons'">
+      <mat-header-cell *cdkHeaderCellDef>{{ 'buttons' }}</mat-header-cell>
+      <mat-cell *cdkCellDef="let row"><button>Call</button></mat-cell>
+    </ng-container>
+  </table>
+
+
+

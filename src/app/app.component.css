@@ -1,18 +1,14 @@
-.building{
-    border: 1px solid black;
+table{
     width: 50%;
     height: 500px;
     margin: auto;
     text-align: center;
+    box-shadow: 0 0 1px 1px lightgray;
+    background-color: white;
+    margin-top: 300px;
+    border-spacing: 0px
 }
 
-.elevator{
-    border: 1px solid black;   
-    height: 30px;
-    width:20px;
-    margin: 40px;
-}
-
-.building{
-
+td{
+    border: 1px solid #F8F8F8;
 }
