@@ -1,19 +1,37 @@
-<table mat-table [dataSource]="dataSource">
+<!-- <table mat-table [dataSource]="dataSource" #table id="myTable">
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     
     <ng-container [cdkColumnDef]="'floors'">
       <mat-cell *cdkCellDef="let row=index">{{floors[row]}}</mat-cell>
     </ng-container>
 
-    <ng-container *ngFor="let column of columns; let colIndex = index" [cdkColumnDef]="column.columnDef">
-      <mat-cell *cdkCellDef="let row">{{ row[colIndex] }}</mat-cell>
+    <ng-container #cell *ngFor="let column of columns; let colIndex = index" [cdkColumnDef]="column.id">
+      <mat-cell *cdkCellDef="let row"><img></mat-cell>
     </ng-container>
 
     <ng-container [cdkColumnDef]="'buttons'">
       <mat-header-cell *cdkHeaderCellDef>{{ 'buttons' }}</mat-header-cell>
-      <mat-cell *cdkCellDef="let row"><button>Call</button></mat-cell>
+      <mat-cell *cdkCellDef="let floor=index"><button (click)="callElevator(floor)">Call</button></mat-cell>
     </ng-container>
-  </table>
+  </table> -->
 
+  <div class="building">
+
+    <div class="floors">
+      <p *ngFor="let floor of floors">{{floor}}</p>
+    </div>
+
+    <div class="elevators">
+      <img class="elevator" *ngFor="let elevator of elevators" src="/assets/elevator.jpg">
+    </div>
+
+    <div class="buttons">
+      <button (click)="callElevator(ind)" *ngFor="let floor of floors; let ind=index">call</button>
+    </div>
+
+  </div>
+
+
+  
 
 
