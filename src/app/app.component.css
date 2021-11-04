@@ -1,31 +1,8 @@
-/* table{
-    width: 50%;
-    height: 500px;
-    margin: auto;
-    text-align: center;
-    box-shadow: 0 0 1px 1px lightgray;
-    background-color: white;
-    margin-top: 300px;
-    border-spacing: 0px
-}
-
-td{
-    border: 1px solid #F8F8F8;
-}
-
-@keyframes example {
-    0%   {left:0px;top:0px;}
-    100% {left:0px;top:-100px;}
-} */
-
 .building{
     display: grid;
     margin: auto;
-    width: 60%;
-    margin-top:30px;
-    grid-template-columns:  1fr 2fr 1fr;
-    grid-column-gap: 0px;
-    grid-template-rows:  10fr;
+    width: 50%;
+    grid-template-columns:  1fr 3fr 0.5fr;
 }
 
 .elevators{
@@ -33,32 +10,27 @@ td{
     background-color: white;
 }
 
-.buttons{
+.buttons,.floors{
     display: inline-grid;
 }
 
 button,p{
     text-align: center;
-    vertical-align: middle;
 }
 
 button{
-    margin-top: 15px;
-    margin-left: 5px;
+    margin: auto;
     border-radius: 3px;
     background-color: lightgreen;
-    width: 70px;
+    width: 50px;
     height: 30px;
-}
-
-.floors{
-    display: inline-grid;
+    color: white;
 }
 
 .elevator{
-    margin-top: 700px;
     margin-right: 15px;
     margin-left: 15px;
-    height: 75px;      
-    width: 50px;
+    height: 50px;      
+    width: 30px;
+    position: relative;
 }
