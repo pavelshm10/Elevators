@@ -4,13 +4,21 @@
   </div>
 
   <div class="elevators">
-    <img class="elevator" *ngFor="let elevator of elevators" src="/assets/elevator.jpg">
+      <img class="elevator" *ngFor="let elevator of elevators" src='/assets/elevator.jpg' [ngClass]="{'elevatorArrived': elevator.status=='arrived', 'elevatorBusy': elevator.status=='busy'}">
   </div>
 
   <div class="buttons">
-    <button (click)="insertCall(floorCall)" *ngFor="let floor of floors; let floorCall=index">call</button>
+    <button class="button" (click)="findClosetElevator(floorCall)" *ngFor="let floor of floors; let floorCall=index">call</button>
   </div>
 </div>
+<div id="container">
+  <div class="timer"></div>
+  <div class="timer"></div>
+  <div class="timer"></div>
+  <div class="timer"></div>
+  <div class="timer"></div>
+</div>
+<audio src="/assets/beep.wav" id="beep_audio" ></audio>
 
 
 

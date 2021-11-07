@@ -24,13 +24,39 @@ button{
     background-color: lightgreen;
     width: 50px;
     height: 30px;
+    border: 2px solid rgb(118, 118, 118);
     color: white;
 }
 
 .elevator{
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 35px;
+    margin-left: 35px;
     height: 50px;      
     width: 30px;
     position: relative;
+}
+
+#container{
+    display: grid;
+    width:35%;
+    height: 40px;
+    position: absolute;
+    left: 35%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.timer{
+    text-align: center;
+}
+
+.elevatorBusy{
+    border-radius: 5px;
+    padding: 2px;
+    background-color: red;
+}
+
+.elevatorArrived{
+    border-radius: 5px;
+    padding: 2px;
+    background-color: lightgreen;
 }
