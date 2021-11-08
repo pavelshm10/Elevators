@@ -123,7 +123,7 @@ export class AppComponent implements OnInit {
       } else if(minutes===0 && seconds===0){
         document.getElementsByClassName("timer").item(elevatorID).innerHTML ='';
         var sound = document.getElementById('beep_audio');
-        // sound.play(); 
+        sound.play(); 
         clearInterval(x);
       }
     }, 1000);
