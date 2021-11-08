@@ -111,6 +111,8 @@ export class AppComponent implements OnInit {
   setTimer(nearestDistance,elevatorID){
     var minutes = Math.floor((nearestDistance*1000 % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((nearestDistance*1000 % (1000 * 60)) / 1000);
+    let audio = new Audio();
+    audio.src = '/assets/beep.wav';
     var x = setInterval(function() {
       document.getElementsByClassName("timer").item(elevatorID).innerHTML = minutes + "m " + seconds + "s ";
       if(minutes>0 && seconds>0){
@@ -122,8 +124,8 @@ export class AppComponent implements OnInit {
         seconds=seconds-1;
       } else if(minutes===0 && seconds===0){
         document.getElementsByClassName("timer").item(elevatorID).innerHTML ='';
-        var sound = document.getElementById('beep_audio');
-        sound.play(); 
+        audio.load();
+        audio.play();
         clearInterval(x);
       }
     }, 1000);
